@@ -12,7 +12,7 @@ To Develop a python program to Plot a time series data with respect to time.
 1. Import the required packages like pandas and matplot
 2. Read the dataset using the pandas
 3. Convert date column into datetime datatype and set it as index.
-4. Resamples all the sales in a day using sum() and plot the Total sales per day
+4. Resamples all the Passengers in a day using interploate() and plot the Total number of passengers per day
 5. Add the necessary details to the plot and display the graph.
 
 # PROGRAM:
@@ -25,17 +25,17 @@ df=pd.read_csv("/content/test.csv")
 
 df.head()
 
-df['date']=pd.to_datetime(df['date'])
+df['Month']=pd.to_datetime(df['Month'])
 
 df.dtypes
 
-df.set_index('date',inplace=True)
+df.set_index('Month',inplace=True)
 
-df_resampled = df['onpromotion'].resample('D').sum()
+df_resampled = df['#Passengers'].resample('D').interpolate()
 df_resampled.plot(kind='line',label='Total Sales', color='black')
-plt.title('Time Series Plot of the sales on different days of a month')
+plt.title('Time Series Plot of Number of passengers ecah day')
 plt.xlabel('Day')
-plt.ylabel('Total sales per day')
+plt.ylabel('Number of passengers')
 plt.legend()
 plt.grid(True)
 plt.show()
@@ -47,3 +47,7 @@ plt.show()
 
 # RESULT:
 Thus we have created the python code for plotting the time series of given data.
+
+# Interpretation:
+
+This is a Non stationary time series with Multiplicative Seasonality and Additive Trend
