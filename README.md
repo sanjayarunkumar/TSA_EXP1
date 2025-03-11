@@ -1,6 +1,6 @@
-## Devloped by: Sreevalsan V
-## Register Number: 212223240158
-##  Date: 25-02-2025
+## Devloped by: SANJAY A
+## Register Number: 212224040288
+##  Date: 11-03-2025
 
 # Ex.No: 01A PLOT A TIME SERIES DATA
 
